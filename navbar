@@ -15,7 +15,12 @@ function NavScrollExample() {
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto my-2 my-lg-0">
             <Nav.Link>Home</Nav.Link>
-            <Nav.Link>Get Updates</Nav.Link>
+              <>
+              <NavDropdown title="Get Updates" id="navbarScrollingDropdown">
+              <NavDropdown.Item><Nav.Link>Weather</Nav.Link></NavDropdown.Item>
+              <NavDropdown.Item><Nav.Link>Stack Market</Nav.Link></NavDropdown.Item>
+              </NavDropdown>
+              </>
               <>
               <NavDropdown title="Sign Up" id="navbarScrollingDropdown">
               <NavDropdown.Item><Nav.Link>Sign Up</Nav.Link></NavDropdown.Item>
@@ -30,8 +35,6 @@ function NavScrollExample() {
               placeholder="Search news"
               className="me-2"
               aria-label="Search"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
             />
             <Button variant="outline-primary" type="submit">Search</Button>
           </Form>
